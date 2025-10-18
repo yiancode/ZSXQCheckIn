@@ -1,0 +1,64 @@
+# 知识星球配置示例文件
+# 使用说明: 复制此文件为 config.yml 并填入真实配置
+
+知识星球:
+  # Token格式: UUID_HASH (从Charles抓包获取Authorization header)
+  token: "your_token_here"
+  # 星球ID
+  group_id: "your_group_id_here"
+  # API Base URL
+  api_base: "https://api.zsxq.com"
+
+缓存配置:
+  # 是否启用缓存
+  enabled: true
+  # 缓存刷新间隔(秒) 默认1小时
+  interval: 3600
+  # Redis配置
+  redis:
+    host: "localhost"
+    port: 6379
+    db: 0
+    password: ""
+    # 键前缀
+    key_prefix: "zsxq:"
+    # 默认过期时间(秒) 2小时
+    default_ttl: 7200
+
+系统配置:
+  # 联系方式(Token失效时展示)
+  contact:
+    type: "微信"
+    value: "20133213"
+
+  # API限流配置
+  rate_limit:
+    enabled: true
+    # 每分钟最大请求数
+    max_requests: 100
+
+  # Flask配置
+  flask:
+    host: "0.0.0.0"
+    port: 5000
+    debug: false
+    # 跨域配置
+    cors_origins: "*"
+
+排行榜配置:
+  # API返回最大数量
+  max_items: 100
+  # 首页预览数量
+  homepage_preview: 10
+  # 默认排行榜类型
+  default_type: "continuous"
+
+日志配置:
+  # 日志级别: DEBUG, INFO, WARNING, ERROR
+  level: "INFO"
+  # 日志文件路径
+  file: "logs/app.log"
+  # 是否输出到控制台
+  console: true
+  # 日志格式
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
