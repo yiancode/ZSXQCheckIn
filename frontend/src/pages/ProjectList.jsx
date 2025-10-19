@@ -99,7 +99,7 @@ const ProjectList = () => {
           type="error"
           showIcon
           action={
-            <Button size="small" onClick={fetchProjects}>
+            <Button size="small" onClick={fetchProjects} data-testid="retry-button">
               重试
             </Button>
           }
